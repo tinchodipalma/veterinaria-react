@@ -1,0 +1,22 @@
+.PetForm {
+  display: block;
+  width: 80%;
+  max-width: 300px;
+  padding: 5px 0;
+  margin: 0 auto;
+  background: #FAFAFA;
+  border: 2px solid #AAA;
+}
+
+.PetForm form div {
+  display: flex;
+  padding: 10px 15px;
+}
+
+.PetForm form div > * {
+  width: 50%;
+}
+
+.PetForm form div:last-child button {
+  margin: 0 auto;
+}

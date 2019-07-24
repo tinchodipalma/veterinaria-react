@@ -1,0 +1,33 @@
+.Navbar {
+  display: flex;
+  padding: 5px 5% 10px;
+  background: #FAFAFA;
+  border-bottom: 3px solid #d10000;
+  margin-bottom: 20px;
+}
+
+.Navbar__Logo {
+  max-width: 80px;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.Navbar__Logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Navbar__Menu {
+  margin-left: auto;
+}
+
+.Navbar__Menu ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+.Navbar__Menu ul li {
+  margin: 0 10px;
+}
