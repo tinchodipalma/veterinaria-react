@@ -12,6 +12,20 @@ class PetForm extends React.Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    if (!prevProps.isEdit && this.props.isEdit) {
+      this.setState({
+        formData: this.props.pet,
+      });
+    }
+
+    if (prevProps.isEdit && !this.props.isEdit) {
+      this.setState({
+        formData: {},
+      });
+    }
+  }
+
   onFormChange(event) {
     const newFormData = { ...this.state.formData };
 
@@ -63,8 +77,19 @@ class PetForm extends React.Component {
 
           <div>
             <button type="submit">
-              Agregar Mascota
+              {this.props.isEdit ? 'Editar Mascota' : 'Agregar Mascota'}
             </button>
+
+            {this.props.isEdit &&
+              <React.Fragment>
+                <button type="button" onClick={this.props.onDelete}>
+                  Eliminar Mascota
+                </button>
+                <button type="button" onClick={this.props.onEditCancel}>
+                  Cancelar Edición
+                </button>
+              </React.Fragment>
+            }
           </div>
         </form>
       </div>

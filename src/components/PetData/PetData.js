@@ -2,7 +2,7 @@ import React from 'react';
 
 import './PetData.css';
 
-const PetData = ({ pet }) => {
+const PetData = ({ pet, onClose, onEdit }) => {
   if (!pet) {
     return null;
   }
@@ -11,11 +11,22 @@ const PetData = ({ pet }) => {
 
   return (
     <div className="PetData">
-      {keys.map((key, i) => (
-        <div className="PetData__Item" key={i}>
-          {key}: {pet[key]}
-        </div>
-      ))}
+      <ul className="PetData__List">
+        {keys.map((key, i) => (
+          <li className="PetData__List__Item" key={i}>
+            {key}: {pet[key]}
+          </li>
+        ))}
+      </ul>
+
+      <div className="PetData__Actions">
+        <button className="PetData__Actions__CloseButton" onClick={onClose}>
+          Cerrar
+        </button>
+        <button className="PetData__Actions__EditButton" onClick={onEdit}>
+          Editar
+        </button>
+      </div>
     </div>
   );  
 }
